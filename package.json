@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "bower": "^1.3.3",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
     "gulp-util": "^2.2.14",
     "shelljs": "^0.3.0"
   },
@@ -22,5 +24,19 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [],
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonlok/myProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonlok/myProject/issues"
+  },
+  "homepage": "https://github.com/jonlok/myProject#readme"
 }
