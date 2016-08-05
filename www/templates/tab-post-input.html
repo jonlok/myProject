@@ -1,0 +1,22 @@
+<ion-view view-title="Post Input">
+  <ion-content>
+
+   <form ng-submit='addPost()'>
+    <label class="item item-input">
+      <span class="input-label">Post content:</span>
+      <input type="text" ng-model="newPost.content">
+    </label>
+   </form>
+
+
+     Created Posts:
+      <ion-list>
+        <ion-item ng-repeat="post in posts">
+        {{post.content}}
+        </ion-item>
+      </ion-list>
+
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,17 @@
+<ion-view view-title="Home">
+  <ion-content class="padding" style="background-color: green">
+    <h2 style="font-family: Papyrus, fantasy;">School Hub</h2>
+    <p style="font-family:courier;">
+    A place for parents to find inspiration and info about schools in Hong Kong
+    </p>
+    <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="User Email" ng-model="data.useremail">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+  </ion-content>
+</ion-view>

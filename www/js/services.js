@@ -1,47 +1,47 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Posts', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
+  var posts = [{
     id: 0,
-    name: 'Ben Sparrow',
+    name: 'Michael Lee',
     lastText: 'You on your way?',
-    face: 'img/ben.png'
+    pic: 'https://static.pexels.com/photos/2752/city-sunny-people-street.jpg'
   }, {
     id: 1,
-    name: 'Max Lynx',
+    name: 'Daniel Wong',
     lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    pic: 'https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg'
   }, {
     id: 2,
-    name: 'Adam Bradleyson',
+    name: 'Arthur Chan',
     lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    pic: 'https://static.pexels.com/photos/46082/pexels-photo-46082.jpeg'
   }, {
     id: 3,
-    name: 'Perry Governor',
+    name: 'Sarah Smith',
     lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    pic: 'https://static.pexels.com/photos/65121/pexels-photo-65121.jpeg'
   }, {
     id: 4,
-    name: 'Mike Harrington',
+    name: 'Mary Carpenter',
     lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    pic: 'https://static.pexels.com/photos/27411/pexels-photo-27411.jpg'
   }];
 
   return {
     all: function() {
-      return chats;
+      return posts;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(post) {
+      posts.splice(posts.indexOf(post), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(postId) {
+      for (var i = 0; i < posts.length; i++) {
+        if (posts[i].id === parseInt(postId)) {
+          return posts[i];
         }
       }
       return null;

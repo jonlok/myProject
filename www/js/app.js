@@ -40,6 +40,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
+   .state('tab.home', {
+    url: '/home',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+
   .state('tab.dash', {
     url: '/dash',
     views: {
@@ -50,21 +60,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+   .state('tab.post-input', {
+      url: '/postinput',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-post-input': {
+          templateUrl: 'templates/tab-post-input.html',
+          controller: 'PostInputCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+
+  .state('tab.posts', {
+      url: '/posts',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-posts': {
+          templateUrl: 'templates/tab-posts.html',
+          controller: 'PostsCtrl'
+        }
+      }
+    })
+    .state('tab.post-detail', {
+      url: '/posts/:postId',
+      views: {
+        'tab-posts': {
+          templateUrl: 'templates/post-detail.html',
+          controller: 'PostDetailCtrl'
         }
       }
     })
@@ -80,6 +100,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });
