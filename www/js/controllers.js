@@ -1,5 +1,23 @@
 angular.module('starter.controllers', [])
 
+.controller('SignUpCtrl', function($scope) {
+    $scope.signup = function () {
+      $auth.submitRegistration($scope.registrationForm).
+       then(function(resp) {
+         // handle success response
+         console.log(resp);
+
+         // redirect back to root when registration succesfull
+         $location.path('/');
+       }).
+       catch(function(resp) {
+         // handle error response
+         console.log(resp);
+       });
+    };
+
+})
+
 .controller('HomeCtrl', function($scope) {
    $scope.data = {};
 
@@ -22,7 +40,7 @@ angular.module('starter.controllers', [])
 
   function getPosts(){
     $http
-      .get('http://localhost:3000/posts')
+      .get('http://localhost:3001/posts')
       .then(function(response){
         console.log(response);
         $scope.posts = response.data;
@@ -31,7 +49,7 @@ angular.module('starter.controllers', [])
 
   $scope.addPost = function(){
     $http({
-      url: 'http://localhost:3000/posts',
+      url: 'http://localhost:3001/posts',
       method: 'POST',
       data: $scope.newPost
     }).then(function(response){
@@ -42,7 +60,23 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', ['$scope','$http', function($scope, $http) {
+
+  $scope.schools = [];
+
+  $scope.getSchools = function(){
+    console.log('test');
+    $http
+      .get('http://localhost:3001/schools')
+      .then(function(response){
+        console.log(response);
+        $scope.schools = response.data;
+      });
+    }
+
+}])
+
+.controller('SignUpCtrl', function($scope) {})
 
 .controller('PostsCtrl', function($scope, Posts) {
   // With the new view caching in Ionic, Controllers are only called

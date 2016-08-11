@@ -5,7 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ng-token-auth'])
+
+.config(function($authProvider) {
+  $authProvider.configure({
+    apiUrl: 'http://localhost:3001'
+  });
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -79,7 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.post-detail', {
+  .state('tab.post-detail', {
       url: '/posts/:postId',
       views: {
         'tab-posts': {
@@ -88,6 +94,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+  .state('tab.signup', {
+      url: '/home/signup',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/signup.html',
+          controller: 'SignUpCtrl'
+        }
+      }
+
+  })
 
   .state('tab.account', {
     url: '/account',

@@ -1,9 +1,19 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
    Search for schools:
+   <form ng-submit='getSchools()'>
     <label class="item item-input">
      <i class="icon ion-search placeholder-icon"></i>
-     <input type="search" placeholder="Search">
+     <input type="search" placeholder="Search" >
     </label>
+   </form>
+    (Data from http://www.edb.gov.hk/)
+
+
+      <ion-list>
+        <ion-item ng-repeat="school in schools">
+        {{school.name}}
+        </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>
